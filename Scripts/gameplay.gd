@@ -9,7 +9,7 @@ var texto: Array[String] = [];
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_set_texto();
-	$Panel/HistoriaRichTextLabel.text = texto[textCounter];
+	$Panel/ImagesPanel/GloboNeutro/MessageLabel.text = texto[textCounter];
 	pass # Replace with function body.
 
 
@@ -86,6 +86,10 @@ func _set_texto():
 
 
 func _on_text_timer_timeout() -> void:
-	$Panel/HistoriaRichTextLabel.text = texto[textCounter];
+	$Panel/ImagesPanel/GloboNeutro/MessageLabel.text = texto[textCounter];
 	textCounter += 1;
+	
+	if(textCounter >= texto.size()):
+		textCounter = 0;
+		
 	pass # Replace with function body.
