@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7aa8jrfq2hel"]
+
+[ext_resource type="Script" path="res://Scripts/gameplay.gd" id="1_ycujr"]
+
+[node name="GameplayRuidoNegro" type="Node2D"]
+script = ExtResource("1_ycujr")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 405.0
+offset_bottom = 721.0
+
+[node name="LblTitulo" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.08
+offset_right = 2.0
+offset_bottom = -0.320007
+theme_override_font_sizes/font_size = 28
+text = "Ruido Negro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HistoriaRichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.068
+anchor_top = 0.12
+anchor_right = 0.944
+anchor_bottom = 0.5
+offset_left = 0.0719986
+offset_top = -0.480011
+offset_right = 0.175964
+offset_bottom = 4.0
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+text = "“Debemos seguir corriendo, ya estamos cerca del refugio. ¿Viste sus armas? Son como burbujas de sonido. Tenemos que ponernos a salvo. 
+
+Presiona la pantalla para seguir corriendo”.
+
+Ah maldita sea, tus piernas están fallando, pica la pantalla en tu celular para mandar la señal a tus piernas, date prisa.
+"
+
+[node name="ScreenButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.571
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 7.06598
+offset_right = -26.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = ">> <<"
+
+[node name="InfoTimer" type="Timer" parent="Panel/ScreenButton"]
+autostart = true
+
+[node name="DebugLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.958
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -0.532104
+offset_right = -25.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.931226, 0.834048, 0.13689, 1)
+text = "Debug
+"
+
+[node name="TextTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="pressed" from="Panel/ScreenButton" to="." method="_on_screen_button_pressed"]
+[connection signal="timeout" from="Panel/ScreenButton/InfoTimer" to="." method="_on_info_timer_timeout"]
+[connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]
