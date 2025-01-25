@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7aa8jrfq2hel"]
+[gd_scene load_steps=5 format=3 uid="uid://b7aa8jrfq2hel"]
 
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="1_ycujr"]
 [ext_resource type="Texture2D" uid="uid://b6oa4s8fic3ej" path="res://Images/Mockup.png" id="2_2ee8o"]
 [ext_resource type="Texture2D" uid="uid://c6q3qj0fqf1cy" path="res://Images/GloboNeutro.png" id="3_nnvnm"]
+[ext_resource type="Script" path="res://Scripts/JSON_Manager.gd" id="4_k25dc"]
 
 [node name="GameplayRuidoNegro" type="Node2D"]
 script = ExtResource("1_ycujr")
@@ -97,6 +98,10 @@ text = "Debug
 [node name="TextTimer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="obj_JSON_Manager" type="Node" parent="."]
+script = ExtResource("4_k25dc")
+JSON_Asset = "res://JSON_Files/Test-RuidoNegro.json"
 
 [connection signal="pressed" from="Panel/ScreenButton" to="." method="_on_screen_button_pressed"]
 [connection signal="timeout" from="Panel/ScreenButton/InfoTimer" to="." method="_on_info_timer_timeout"]
