@@ -4,12 +4,70 @@ var infoTimeCooldown = 1.0;
 var bInfoText = false;
 var clickCounter = 0;
 var textCounter = 0;
+@export var AudioTracks: Array[AudioStream];
+@export var HintsSystemAudioTracks: Array[AudioStream];
+@export var SystemActionsAudioTracks: Array[AudioStream];
+@export var Scenes: Array[PackedScene];
+
+enum EMenuStatus {
+	MenuInactive,
+	MenuActionActive,
+	UpperMenuActive,
+	LowerMenuActive,
+	LeftMenuActive,
+	RightMenuActive,
+	CentralMenuActive,
+}
+enum EAction {
+	NOONE,
+	EXIT,
+	PLAY,
+	CONTINUE,
+	LEFT_ACTION,
+	RIGHT_ACTION,
+	BACKWARD,
+	FOWARD,
+	PAUSE,
+	STOP,
+	FFOWARD,
+	FBACKWARD,
+	SKIP,
+	MENU,
+}
+enum ESideHint{
+	LEFT,
+	RIGHT,
+}
+enum EAudioStatus{
+	IDLE,
+	PLAYING,
+	WAITING,
+	FINISH,
+}
+
+var MenuStatus = EMenuStatus.MenuInactive;
+var SystemAction = EAction.NOONE;
+var IsMouseExit = true;
+var IsMouseDown = false;
+var MouseLastPosition = Vector2();
+var MouseNewPosition = Vector2();
+var PressedTimer = 0.0;
+var ActionDelta = 0.0;
+
+var AudioActualPosition = 0;
+var StoryArray;
+var HintIzq;
+var HintDer;
+var AudioStatus = EAudioStatus.IDLE;
+var ShowHints = false;
+
 
 var texto: Array[String] = [];
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_set_texto();
 	$Panel/ImagesPanel/GloboNeutro/MessageLabel.text = texto[textCounter];
+	StoryArray = $obj_JSON_Manager._get_json_info();
 	pass # Replace with function body.
 
 
@@ -34,6 +92,7 @@ func _on_info_timer_timeout() -> void:
 
 func _on_screen_button_pressed() -> void:
 	clickCounter += 1;
+	_play_next_dialog();
 	
 	pass # Replace with function body.
 
@@ -86,10 +145,131 @@ func _set_texto():
 
 
 func _on_text_timer_timeout() -> void:
-	$Panel/ImagesPanel/GloboNeutro/MessageLabel.text = texto[textCounter];
-	textCounter += 1;
+	# _play_next_dialog();
+		
+	pass # Replace with function body.
+	
+func _play_next_dialog():
+	
+	_read_audio_script();
+	#$Panel/ImagesPanel/GloboNeutro/MessageLabel.text = texto[textCounter];
+	#textCounter += 1;
+	AudioActualPosition += 1;
+	
+	if(AudioActualPosition >= StoryArray.size()):
+		AudioActualPosition = 0;
 	
 	if(textCounter >= texto.size()):
 		textCounter = 0;
+	pass
+
+
+func _get_audio(IsHint: bool, nombre: String):
+	if(IsHint):
+		for itm in HintsSystemAudioTracks:
+			if(itm.resource_path.contains(nombre)):
+				return itm;
+	else:
+		for itm in AudioTracks:
+			if(itm.resource_path.contains(nombre)):
+				return itm;
+				
+	return null;
+	pass
+	
+func _get_story_itm_by_id(_id: int):
+	for itm in StoryArray:
+		if(itm.get("ID") == _id):
+			print(itm);
+			return itm;
+			
+	return null;
+	pass
+	
+func _read_audio_script():
+	
+	if(AudioStatus != EAudioStatus.IDLE):
+		return;
+	#AudioActualPosition
+	var itm = _get_story_itm_by_id(AudioActualPosition);
+	print(itm);
+	#Set_GUI_Options_Text.emit("","");
+	
+	#if(itm.get("Evento") == "Siguiente Escena"):
+		#print("Siguiente Escena: " + itm.get("Pasaje"));
+		##get_tree().change_scene_to_packed(Scenes[0]);
+		#_get_next_scene(itm);
+		##AudioStatus = EAudioStatus.FINISH;
+		##Set_GUI_Main_Text.emit("FIN");
+		#return;
+	
+	
+	$Panel/ImagesPanel/GloboNeutro/MessageLabel.text = itm.get("Texto");
+	
+	
+	if(itm.get("Archivo") != null):
+		$GeneralAudioStreamPlayer.stream = _get_audio(false,itm.get("Archivo"));
+		$GeneralAudioStreamPlayer.play(0.0);
+		AudioStatus = EAudioStatus.PLAYING;
 		
+	#Set_GUI_Main_Text.emit(itm.get("Dialogo_Sonido"));
+	
+	#if(itm.get("ID_Destino_Der") != null):
+		#_set_hints(itm);
+		#AudioStatus = EAudioStatus.WAITING;
+		#return;
+	#else:
+		#AudioActualPosition = itm.get("ID_Destino_Izq");
+		#HintIzq = null;
+		#HintDer = null;
+			
+		
+	pass
+
+func _set_hints(master_element: Dictionary):
+	var elementIzq;
+	var elementDer;
+	
+	for itm in StoryArray:
+		if(itm.get("ID") == master_element.get("ID_Destino_Izq")):
+			HintIzq = itm;
+			if(itm.get("Archivo") != null):
+				elementIzq = itm.get("Archivo");
+				$LeftAudioStreamPlayer2D.stream = _get_audio(true,elementIzq);			
+			break;
+			
+	for itm in StoryArray:
+		if(itm.get("ID") == master_element.get("ID_Destino_Der")):
+			HintDer = itm;
+			if(itm.get("Archivo") != null):
+				elementDer = itm.get("Archivo");
+				$RightAudioStreamPlayer2D.stream = _get_audio(true,elementDer);
+			break;
+					
+	#$RightAudioStreamPlayer2D.stream = _get_audio(true,element.get("Archivo"));
+	#Set_GUI_Options_Text.emit(HintIzq.get("Dialogo_Sonido"),HintDer.get("Dialogo_Sonido"));
+	pass
+
+func _get_next_scene(itm: Dictionary):
+	
+	for _scene in Scenes:
+		var scene_name = _scene.resource_name;
+		if(_scene.resource_path.contains(itm.get("Pasaje"))):
+			get_tree().change_scene_to_packed(_scene);
+			break;
+	print("Escena no encontrada");
+	pass;
+
+
+func _on_general_audio_stream_player_finished() -> void:
+	
+	if(AudioStatus == EAudioStatus.PLAYING):
+		AudioStatus = EAudioStatus.IDLE;
+		#_read_audio_script();
+	return;
+	
+	#if(AudioStatus == EAudioStatus.WAITING):
+		#Set_GUI_Options_Text.emit(HintIzq.get("Dialogo_Sonido"),HintDer.get("Dialogo_Sonido"));
+
+	_play_next_dialog();
 	pass # Replace with function body.

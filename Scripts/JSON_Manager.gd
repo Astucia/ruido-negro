@@ -32,14 +32,16 @@ func _get_choices():
 	
 	for Itm in json_string:
 		if(Itm is Dictionary):
-			if(Itm["EsDecision"] == true):
-				if(Itm["ID_Destino_Izq"] != null):
-					lstChoicesL.append({"ID":Itm["ID"],"Archivo":Itm["Archivo"],"Destino":Itm["ID_Destino_Izq"]});
-				else:
-					if(Itm["ID_Destino_Der"] != null):
-						lstChoicesR.append({"ID":Itm["ID"],"Archivo":Itm["Archivo"],"Destino":Itm["ID_Destino_Der"]});
-			else:
-				lstDialoges.append(Itm);
+			lstDialoges.append(Itm);
+			
+			#if(Itm["EsDecision"] == true):
+				#if(Itm["ID_Destino_Izq"] != null):
+					#lstChoicesL.append({"ID":Itm["ID"],"Archivo":Itm["Archivo"],"Destino":Itm["ID_Destino_Izq"]});
+				#else:
+					#if(Itm["ID_Destino_Der"] != null):
+						#lstChoicesR.append({"ID":Itm["ID"],"Archivo":Itm["Archivo"],"Destino":Itm["ID_Destino_Der"]});
+			#else:
+				#lstDialoges.append(Itm);
 	pass
 
  
