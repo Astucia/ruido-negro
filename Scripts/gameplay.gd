@@ -8,6 +8,7 @@ var textCounter = 0;
 @export var HintsSystemAudioTracks: Array[AudioStream];
 @export var SystemActionsAudioTracks: Array[AudioStream];
 @export var Scenes: Array[PackedScene];
+@export var CaminarAudioTracks: Array[AudioStream];
 
 enum EMenuStatus {
 	MenuInactive,
@@ -35,6 +36,13 @@ enum EAction {
 	MENU,
 	MECANICA
 }
+
+enum EMecanica {
+	NOONE,
+	CAMINAR,
+	LEVANTARSE,
+}
+
 enum ESideHint{
 	LEFT,
 	RIGHT,
@@ -61,7 +69,7 @@ var HintIzq;
 var HintDer;
 var AudioStatus = EAudioStatus.IDLE;
 var ShowHints = false;
-
+var MecanicaActual = EMecanica.NOONE
 
 var texto: Array[String] = [];
 # Called when the node enters the scene tree for the first time.
@@ -74,7 +82,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Panel/DebugLabel.text = "Clics: %s" % [clickCounter];
+	$Panel/DebugLabel.text = "Pos: %s - Clics: %s" % [AudioActualPosition, clickCounter];
 	pass
 
 
@@ -94,10 +102,15 @@ func _on_info_timer_timeout() -> void:
 func _on_screen_button_pressed() -> void:
 	clickCounter += 1;
 	
-	if(AudioStatus != EAudioStatus.IDLE && SystemAction != EAction.NOONE):
+	if(AudioStatus == EAudioStatus.IDLE && SystemAction == EAction.NOONE):
+		_play_next_dialog();
 		return;
+	
+	if(MecanicaActual == EMecanica.CAMINAR):
+		#CaminarAudioTracks.shuffle();
+		$MecanicaAudioStreamPlayer.stream = CaminarAudioTracks.pick_random();
+		$MecanicaAudioStreamPlayer.play(0.0);
 		
-	_play_next_dialog();
 	
 	pass # Replace with function body.
 
@@ -205,11 +218,18 @@ func _read_audio_script():
 	var itmArchivo = itm.get("Archivo");
 	var itmGlobo = itm.get("Globo");
 	var itmImagen = itm.get("Imagen");
+	var itmMecanica = itm.get("Mecanica");
 	
 	if(itmTipo != null):
 		match itmTipo:
 			"MECANICA":
-				_mecanica_pasos();
+				$Panel/ImagesPanel/GloboNeutro/MessageLabel.text = itm.get("Texto");
+				
+				match itmMecanica:
+					"CAMINAR":
+						_mecanica_pasos(itmDuracion);
+					"LEVANTARSE":
+						_mecanica_levantarse(itmDuracion);
 			_:
 				$Panel/ImagesPanel/GloboNeutro/MessageLabel.text = itm.get("Texto");
 				
@@ -269,6 +289,33 @@ func _on_general_audio_stream_player_finished() -> void:
 	
 	pass # Replace with function body.
 
-func _mecanica_pasos():
+func _mecanica_pasos(Duracion: float):
 	SystemAction = EAction.MECANICA;
+	MecanicaActual = EMecanica.CAMINAR;
+	
+	$MecanicaTimer.wait_time = Duracion;
+	$MecanicaTimer.start();
 	pass
+
+func _mecanica_levantarse(Duracion: float):
+	SystemAction = EAction.MECANICA;
+	MecanicaActual = EMecanica.LEVANTARSE;
+	
+	$MecanicaTimer.wait_time = Duracion;
+	$MecanicaTimer.start();
+	pass
+
+func _on_mecanica_timer_timeout() -> void:
+	#SystemAction = EAction.NOONE;
+	MecanicaActual = EMecanica.NOONE;
+	
+	if(AudioActualPosition < 16):
+		AudioActualPosition = 16;
+		_play_next_dialog();
+		
+	if(AudioActualPosition > 18):
+		AudioActualPosition = 22;
+		_play_next_dialog();
+	
+	
+	pass # Replace with function body.

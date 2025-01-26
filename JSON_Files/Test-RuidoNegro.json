@@ -11,6 +11,7 @@
 	  "Archivo": null,
 	  "Globo": 1,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -19,11 +20,12 @@
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": 8.71,
+	  "Duracion": 8.5,
 	  "Texto": "[FX] Sonido de alarma de guerra nuclear",
 	  "Archivo": "Bloque01.wav",
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "en fade in hasta volverse muy fuerte (Escala de audio 8/10)"
 	},
 	{
@@ -37,6 +39,7 @@
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "en fade in hasta volverse muy fuerte (8/10) - Reemplaza al sonido de la alarma - La alarma en fade out"
 	},
 	{
@@ -50,6 +53,7 @@
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "- Se mantiene de fondo"
 	},
 	{
@@ -63,6 +67,7 @@
 	  "Archivo": null,
 	  "Globo": 1,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "[Voz - Actor 1 - Intención formal tipo noticiero]"
 	},
 	{
@@ -76,6 +81,7 @@
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -84,11 +90,12 @@
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": 1.7,
+	  "Duracion": 1.5,
 	  "Texto": "[FX] Sonido de pasos corriendo (2 personas)",
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "- Duración 5 segundos - Se detiene"
 	},
 	{
@@ -102,6 +109,7 @@
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -115,6 +123,7 @@
 	  "Archivo": null,
 	  "Globo": 1,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "[Voz - Actriz 1 - Tono Angustia/Preocupación]"
 	},
 	{
@@ -128,6 +137,7 @@
 	  "Archivo": null,
 	  "Globo": 1,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -141,6 +151,7 @@
 	  "Archivo": null,
 	  "Globo": 1,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -149,11 +160,12 @@
 	  "Tipo": "MECANICA",
 	  "Loop": false,
 	  "Salto": 16,
-	  "Duracion": null,
+	  "Duracion": 20,
 	  "Texto": "Pulsa el botón ritmicamente para caminar.",
 	  "Archivo": null,
 	  "Globo": 1,
 	  "Imagen": null,
+	  "Mecanica": "CAMINAR",
 	  "Observaciones": "- Si el jugador presiona la pantalla, entonces se escuchará el sonido de las pisadas, de lo contrario sólo se escuchará el sonido de la respiración agitada de una persona."
 	},
 	{
@@ -167,6 +179,7 @@
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -180,6 +193,7 @@
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -193,6 +207,7 @@
 	  "Archivo": "Voz Karla-04.wav",
 	  "Globo": 2,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "- Si el jugador no presiona la pantalla, a los 5 segundos entonces se escuchará el audio “"
 	},
 	{
@@ -206,6 +221,7 @@
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "- Duración: 7 segundos"
 	},
 	{
@@ -214,11 +230,12 @@
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 0.5,
 	  "Texto": "[FX] Sonido de alguien tropezando",
 	  "Archivo": "Bloque02.wav",
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "[Si los pasos no son acompasados, o son muy rápidos y frenéticos, caerá]"
 	},
 	{
@@ -227,11 +244,12 @@
 	  "Tipo": "NARRACION",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 8,
 	  "Texto": "“¡Noooo! ¡Levántate por favor! ¡El refugio está cerca! La gente que viene detrás de nosotros se quedará con todos los lugares y no podremos entrar!",
 	  "Archivo": null,
 	  "Globo": 2,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "[Voz - Actriz 1 - Intención Desesperación]"
 	},
 	{
@@ -240,11 +258,12 @@
 	  "Tipo": "SFX",
 	  "Loop": true,
 	  "Salto": null,
-	  "Duracion": 4,
+	  "Duracion": 0.5,
 	  "Texto": "[FX Sonido de muchedumbre acercándose]",
-	  "Archivo": null,
+	  "Archivo": "RunningCrowd01.mp3",
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -253,11 +272,12 @@
 	  "Tipo": "MECANICA",
 	  "Loop": false,
 	  "Salto": 22,
-	  "Duracion": null,
-	  "Texto": "Pulsa el botón frenéticamente para lebantarte.",
+	  "Duracion": 20,
+	  "Texto": "Pulsa el botón frenéticamente para levantarte.",
 	  "Archivo": null,
 	  "Globo": 1,
 	  "Imagen": null,
+	  "Mecanica": "LEVANTARSE",
 	  "Observaciones": "- Si el jugador presiona la pantalla, entonces se escuchará el sonido de esfuerzo para levantarse."
 	},
 	{
@@ -271,6 +291,7 @@
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -284,6 +305,7 @@
 	  "Archivo": "Voz Karla-08.wav",
 	  "Globo": 2,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "[Voz - Actriz 1 - Intención Desesperación] - Si pasan más de 3 segundos y no puede levantarse (12 clicks en 3 segundos) - Reinicia el contador"
 	},
 	{
@@ -292,11 +314,12 @@
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": 4,
+	  "Duracion": 4.5,
 	  "Texto": "[FX Sonido de la muchedumbre aún más intenso - Volumen 7/10 - Duración 4 segundos]",
 	  "Archivo": "Bloque03-alt.wav",
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -305,11 +328,12 @@
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": 2,
+	  "Duracion": 0.5,
 	  "Texto": "[FX - Silencio total]",
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -318,11 +342,12 @@
 	  "Tipo": "SFX",
 	  "Loop": true,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 3.5,
 	  "Texto": "[FX - Se escucha un zumbido de baja frecuencia - Volumen 5/10]",
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -331,11 +356,12 @@
 	  "Tipo": "SFX",
 	  "Loop": true,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 0.5,
 	  "Texto": "[FX - Latido de un corazón - Volumen 3/10 - Se mantiene en loop junto con el zumbido]",
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -344,11 +370,12 @@
 	  "Tipo": "NARRACION",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 7.4,
 	  "Texto": "Allá, sobre ese edificio ¿Qué es eso? ¡¡¡Está flotando!!! ¡¡¡Ya!!! ¡¡¡Presiona la pantalla para que te puedas levantaaaaaaar!!!",
 	  "Archivo": null,
 	  "Globo": 2,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "[Voz - Actriz 1 - Intención Curiosidad/Miedo - Voz amortiguada como si estuviera hablando a través de una pared] Tartamudeo"
 	},
 	{
@@ -357,11 +384,12 @@
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 1,
 	  "Texto": "[FX - Se mantienen todos los efectos anteriores]",
 	  "Archivo": null,
 	  "Globo": 0,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "Si el usuario no presiona la pantalla"
 	},
 	{
@@ -370,11 +398,12 @@
 	  "Tipo": "NOTA",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 5,
 	  "Texto": "¡¡¡Por favor levántate!!! ¡¡¡Esa cosa está empezando a brillar!!! ¡¡¡Va a hacer algo!!!",
 	  "Archivo": null,
 	  "Globo": 2,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "[Voz - Actriz 1 - Intención Miedo/Desesperación] [Repetir cada 4 segundos hasta que el usuario presione la pantalla]"
 	},
 	{
@@ -383,11 +412,12 @@
 	  "Tipo": "NARRACION",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 3,
 	  "Texto": "¡¡¡¿¿¿QUÉ ES ESO???!!! ¡¡¡ESE DESTELLO!!! ¡¡¡NO PUEDO VEEEEEER!!!",
 	  "Archivo": null,
 	  "Globo": 2,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "[Voz - Actriz 1 - Intención Pánico] -  Si el usuario presiona la pantalla"
 	},
 	{
@@ -396,11 +426,12 @@
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 2,
 	  "Texto": "[FX - Sonido de succión]",
 	  "Archivo": null,
 	  "Globo": null,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -409,11 +440,12 @@
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": 3,
+	  "Duracion": 1.5,
 	  "Texto": "Silencio",
 	  "Archivo": null,
 	  "Globo": null,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	},
 	{
@@ -422,11 +454,12 @@
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 5,
 	  "Texto": "[FX] Estallido",
 	  "Archivo": null,
 	  "Globo": null,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": "al menos 5 segundos"
 	},
 	{
@@ -435,11 +468,12 @@
 	  "Tipo": "OTRO",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 20,
 	  "Texto": "FIN",
 	  "Archivo": null,
 	  "Globo": null,
 	  "Imagen": null,
+	  "Mecanica": null,
 	  "Observaciones": null
 	}
   ]

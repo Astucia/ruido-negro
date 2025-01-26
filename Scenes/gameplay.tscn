@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7aa8jrfq2hel"]
+[gd_scene load_steps=21 format=3 uid="uid://b7aa8jrfq2hel"]
 
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="1_ycujr"]
-[ext_resource type="Texture2D" uid="uid://b6oa4s8fic3ej" path="res://Images/Mockup.png" id="2_2ee8o"]
 [ext_resource type="AudioStream" uid="uid://bplt26kkwhs2b" path="res://SFX/Bloque01.wav" id="2_xlgbr"]
 [ext_resource type="Texture2D" uid="uid://c6q3qj0fqf1cy" path="res://Images/GloboNeutro.png" id="3_nnvnm"]
 [ext_resource type="AudioStream" uid="uid://cgw31ly8t4s1g" path="res://SFX/Bloque02.wav" id="3_pj0bd"]
@@ -12,10 +11,20 @@
 [ext_resource type="AudioStream" uid="uid://cpnn5qcu7jjqb" path="res://SFX/Voz Karla-08.wav" id="7_gxi2f"]
 [ext_resource type="AudioStream" uid="uid://b30cka3bkqndo" path="res://SFX/Voz Karla-HeavyBreathing.wav" id="8_0o6j3"]
 [ext_resource type="AudioStream" uid="uid://duhk3dbnpmel" path="res://SFX/Voz Karla-Jadeo.wav" id="9_nutgb"]
+[ext_resource type="AudioStream" uid="uid://c2mxfgntjs1bh" path="res://SFX/Pasos dirt/Footsteps-ConcreteDirt-10.wav" id="10_gwmxd"]
+[ext_resource type="AudioStream" uid="uid://bqnorb7eintpx" path="res://SFX/Pasos dirt/Footsteps-ConcreteDirt-11.wav" id="11_t1msl"]
+[ext_resource type="AudioStream" uid="uid://bl6emrqf2i6fc" path="res://SFX/Pasos dirt/Footsteps-ConcreteDirt-12.wav" id="12_ebnk1"]
+[ext_resource type="AudioStream" uid="uid://ctvi51x3m8qfn" path="res://SFX/Pasos dirt/Footsteps-ConcreteDirt-13.wav" id="13_13uxd"]
+[ext_resource type="AudioStream" uid="uid://br271yyohft84" path="res://SFX/Pasos dirt/Footsteps-ConcreteDirt-14.wav" id="14_xq5ec"]
+[ext_resource type="AudioStream" uid="uid://grdeclur6l8t" path="res://SFX/Pasos dirt/Footsteps-ConcreteDirt-15.wav" id="15_3c0fu"]
+[ext_resource type="AudioStream" uid="uid://c7njjsxeafoxc" path="res://SFX/Pasos dirt/Footsteps-ConcreteDirt-16.wav" id="16_okkk6"]
+[ext_resource type="AudioStream" uid="uid://c2qbepdmt1bou" path="res://SFX/Pasos dirt/Footsteps-ConcreteDirt-17.wav" id="17_f8fwa"]
+[ext_resource type="Texture2D" uid="uid://dpl7feqsq8ukk" path="res://Images/bosque_camino2.png" id="18_ef3db"]
 
 [node name="GameplayRuidoNegro" type="Node2D"]
 script = ExtResource("1_ycujr")
 AudioTracks = Array[AudioStream]([ExtResource("2_xlgbr"), ExtResource("3_pj0bd"), ExtResource("4_re3ng"), ExtResource("5_tld47"), ExtResource("6_gd0kv"), ExtResource("7_gxi2f"), ExtResource("8_0o6j3"), ExtResource("9_nutgb")])
+CaminarAudioTracks = Array[AudioStream]([ExtResource("10_gwmxd"), ExtResource("11_t1msl"), ExtResource("12_ebnk1"), ExtResource("13_13uxd"), ExtResource("14_xq5ec"), ExtResource("15_3c0fu"), ExtResource("16_okkk6"), ExtResource("17_f8fwa")])
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 648.0
@@ -46,7 +55,7 @@ offset_bottom = -0.0860291
 [node name="Mockup" type="Sprite2D" parent="Panel/ImagesPanel"]
 position = Vector2(324, 282.052)
 scale = Vector2(1.24, 1.12021)
-texture = ExtResource("2_2ee8o")
+texture = ExtResource("18_ef3db")
 
 [node name="GloboNeutro" type="Sprite2D" parent="Panel/ImagesPanel"]
 position = Vector2(283, 211.103)
@@ -114,7 +123,13 @@ JSON_Asset = "res://JSON_Files/Test-RuidoNegro.json"
 
 [node name="GeneralAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="MecanicaTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MecanicaAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Panel/ScreenButton" to="." method="_on_screen_button_pressed"]
 [connection signal="timeout" from="Panel/ScreenButton/InfoTimer" to="." method="_on_info_timer_timeout"]
 [connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]
 [connection signal="finished" from="GeneralAudioStreamPlayer" to="." method="_on_general_audio_stream_player_finished"]
+[connection signal="timeout" from="MecanicaTimer" to="." method="_on_mecanica_timer_timeout"]
