@@ -33,6 +33,7 @@ enum EAction {
 	FBACKWARD,
 	SKIP,
 	MENU,
+	MECANICA
 }
 enum ESideHint{
 	LEFT,
@@ -92,6 +93,10 @@ func _on_info_timer_timeout() -> void:
 
 func _on_screen_button_pressed() -> void:
 	clickCounter += 1;
+	
+	if(AudioStatus != EAudioStatus.IDLE && SystemAction != EAction.NOONE):
+		return;
+		
 	_play_next_dialog();
 	
 	pass # Replace with function body.
@@ -145,7 +150,7 @@ func _set_texto():
 
 
 func _on_text_timer_timeout() -> void:
-	# _play_next_dialog();
+	_play_next_dialog();
 		
 	pass # Replace with function body.
 	
@@ -157,6 +162,7 @@ func _play_next_dialog():
 	AudioActualPosition += 1;
 	
 	if(AudioActualPosition >= StoryArray.size()):
+		AudioStatus = EAudioStatus.FINISH;
 		AudioActualPosition = 0;
 	
 	if(textCounter >= texto.size()):
@@ -187,43 +193,36 @@ func _get_story_itm_by_id(_id: int):
 	pass
 	
 func _read_audio_script():
-	
-	if(AudioStatus != EAudioStatus.IDLE):
-		return;
-	#AudioActualPosition
+
 	var itm = _get_story_itm_by_id(AudioActualPosition);
-	print(itm);
-	#Set_GUI_Options_Text.emit("","");
+	print(itm);	
 	
-	#if(itm.get("Evento") == "Siguiente Escena"):
-		#print("Siguiente Escena: " + itm.get("Pasaje"));
-		##get_tree().change_scene_to_packed(Scenes[0]);
-		#_get_next_scene(itm);
-		##AudioStatus = EAudioStatus.FINISH;
-		##Set_GUI_Main_Text.emit("FIN");
-		#return;
+	var itmID = itm.get("ID");
+	var itmTipo = itm.get("Tipo");
+	var itmSalto = itm.get("Salto");
+	var itmDuracion = itm.get("Duracion");
+	var itmTexto = itm.get("Texto");
+	var itmArchivo = itm.get("Archivo");
+	var itmGlobo = itm.get("Globo");
+	var itmImagen = itm.get("Imagen");
 	
-	
-	$Panel/ImagesPanel/GloboNeutro/MessageLabel.text = itm.get("Texto");
-	
-	
-	if(itm.get("Archivo") != null):
-		$GeneralAudioStreamPlayer.stream = _get_audio(false,itm.get("Archivo"));
-		$GeneralAudioStreamPlayer.play(0.0);
-		AudioStatus = EAudioStatus.PLAYING;
-		
-	#Set_GUI_Main_Text.emit(itm.get("Dialogo_Sonido"));
-	
-	#if(itm.get("ID_Destino_Der") != null):
-		#_set_hints(itm);
-		#AudioStatus = EAudioStatus.WAITING;
-		#return;
-	#else:
-		#AudioActualPosition = itm.get("ID_Destino_Izq");
-		#HintIzq = null;
-		#HintDer = null;
-			
-		
+	if(itmTipo != null):
+		match itmTipo:
+			"MECANICA":
+				_mecanica_pasos();
+			_:
+				$Panel/ImagesPanel/GloboNeutro/MessageLabel.text = itm.get("Texto");
+				
+				if(itmDuracion != null):
+					$TextTimer.wait_time = itmDuracion; #float(itm.get("Duracion"));
+					$TextTimer.start();
+					#AudioStatus = EAudioStatus.PLAYING;
+				
+				if(itmArchivo != null):
+					$GeneralAudioStreamPlayer.stream = _get_audio(false,itmArchivo);
+					$GeneralAudioStreamPlayer.play(0.0);
+					AudioStatus = EAudioStatus.PLAYING;
+					
 	pass
 
 func _set_hints(master_element: Dictionary):
@@ -266,10 +265,10 @@ func _on_general_audio_stream_player_finished() -> void:
 	if(AudioStatus == EAudioStatus.PLAYING):
 		AudioStatus = EAudioStatus.IDLE;
 		#_read_audio_script();
-	return;
+		return;
 	
-	#if(AudioStatus == EAudioStatus.WAITING):
-		#Set_GUI_Options_Text.emit(HintIzq.get("Dialogo_Sonido"),HintDer.get("Dialogo_Sonido"));
-
-	_play_next_dialog();
 	pass # Replace with function body.
+
+func _mecanica_pasos():
+	SystemAction = EAction.MECANICA;
+	pass

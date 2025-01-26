@@ -1,6 +1,7 @@
 [
   [
 	{
+	  "Bloques": 1,
 	  "ID": 0,
 	  "Tipo": "OTRO",
 	  "Loop": false,
@@ -8,69 +9,90 @@
 	  "Duracion": null,
 	  "Texto": "Te damos la bienvenida a este audiojuego.\nPreciona el botón para iniciar.",
 	  "Archivo": null,
+	  "Globo": 1,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 1,
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 8.71,
 	  "Texto": "[FX] Sonido de alarma de guerra nuclear",
-	  "Archivo": "RadioactAlarm01.mp3",
+	  "Archivo": "Bloque01.wav",
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": "en fade in hasta volverse muy fuerte (Escala de audio 8/10)"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 2,
 	  "Tipo": "SFX",
 	  "Loop": true,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 5,
 	  "Texto": "[FX] Estática",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": "en fade in hasta volverse muy fuerte (8/10) - Reemplaza al sonido de la alarma - La alarma en fade out"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 3,
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 1,
 	  "Texto": "Disminuye el volumen de Estática (4/10)",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": "- Se mantiene de fondo"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 4,
 	  "Tipo": "NARRACION",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 8,
 	  "Texto": "Se han confirmado ataques en decenas de ciudades alrededor del mundo por objetos de origen desconocido que han aparecido desde hace algunas semanas.",
 	  "Archivo": null,
+	  "Globo": 1,
+	  "Imagen": null,
 	  "Observaciones": "[Voz - Actor 1 - Intención formal tipo noticiero]"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 5,
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 1,
 	  "Texto": "[FX] Fade out del sonido de la estática",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 6,
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": 5,
+	  "Duracion": 1.7,
 	  "Texto": "[FX] Sonido de pasos corriendo (2 personas)",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": "- Duración 5 segundos - Se detiene"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 7,
 	  "Tipo": "SFX",
 	  "Loop": false,
@@ -78,39 +100,51 @@
 	  "Duracion": 1,
 	  "Texto": "Silencio",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 8,
 	  "Tipo": "NARRACION",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 3.2,
 	  "Texto": "Debemos seguir corriendo, ya estamos cerca del refugio.",
 	  "Archivo": null,
+	  "Globo": 1,
+	  "Imagen": null,
 	  "Observaciones": "[Voz - Actriz 1 - Tono Angustia/Preocupación]"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 9,
 	  "Tipo": "NARRACION",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 5,
 	  "Texto": "¿Viste sus armas? Son como burbujas estruendosas. Tenemos que ponernos a salvo.",
 	  "Archivo": null,
+	  "Globo": 1,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 10,
 	  "Tipo": "NARRACION",
 	  "Loop": false,
 	  "Salto": null,
-	  "Duracion": null,
+	  "Duracion": 9.1,
 	  "Texto": "Ah maldita sea, tus piernas están fallando, pica la pantalla en tu celular para mandar la señal a tus piernas, date prisa.",
 	  "Archivo": null,
+	  "Globo": 1,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 11,
 	  "Tipo": "MECANICA",
 	  "Loop": false,
@@ -118,9 +152,12 @@
 	  "Duracion": null,
 	  "Texto": "Pulsa el botón ritmicamente para caminar.",
 	  "Archivo": null,
+	  "Globo": 1,
+	  "Imagen": null,
 	  "Observaciones": "- Si el jugador presiona la pantalla, entonces se escuchará el sonido de las pisadas, de lo contrario sólo se escuchará el sonido de la respiración agitada de una persona."
 	},
 	{
+	  "Bloques": null,
 	  "ID": 12,
 	  "Tipo": "SFX",
 	  "Loop": false,
@@ -128,9 +165,12 @@
 	  "Duracion": null,
 	  "Texto": "[FX] Sonido de pisadas",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 13,
 	  "Tipo": "SFX",
 	  "Loop": false,
@@ -138,19 +178,25 @@
 	  "Duracion": null,
 	  "Texto": "[FX] Sonido de respiración agitada",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 14,
 	  "Tipo": "NOTA",
 	  "Loop": false,
 	  "Salto": null,
 	  "Duracion": null,
 	  "Texto": "¿Qué esperas? Presiona la pantalla para que podamos correr y llegar al refugio.",
-	  "Archivo": null,
+	  "Archivo": "Voz Karla-04.wav",
+	  "Globo": 2,
+	  "Imagen": null,
 	  "Observaciones": "- Si el jugador no presiona la pantalla, a los 5 segundos entonces se escuchará el audio “"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 15,
 	  "Tipo": "SFX",
 	  "Loop": false,
@@ -158,19 +204,25 @@
 	  "Duracion": 7,
 	  "Texto": "[FX] Sonido de pisadas corriendo",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": "- Duración: 7 segundos"
 	},
 	{
+	  "Bloques": 2,
 	  "ID": 16,
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
 	  "Duracion": null,
 	  "Texto": "[FX] Sonido de alguien tropezando",
-	  "Archivo": null,
+	  "Archivo": "Bloque02.wav",
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": "[Si los pasos no son acompasados, o son muy rápidos y frenéticos, caerá]"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 17,
 	  "Tipo": "NARRACION",
 	  "Loop": false,
@@ -178,9 +230,12 @@
 	  "Duracion": null,
 	  "Texto": "“¡Noooo! ¡Levántate por favor! ¡El refugio está cerca! La gente que viene detrás de nosotros se quedará con todos los lugares y no podremos entrar!",
 	  "Archivo": null,
+	  "Globo": 2,
+	  "Imagen": null,
 	  "Observaciones": "[Voz - Actriz 1 - Intención Desesperación]"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 18,
 	  "Tipo": "SFX",
 	  "Loop": true,
@@ -188,19 +243,25 @@
 	  "Duracion": 4,
 	  "Texto": "[FX Sonido de muchedumbre acercándose]",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 19,
 	  "Tipo": "MECANICA",
 	  "Loop": false,
-	  "Salto": 24,
+	  "Salto": 22,
 	  "Duracion": null,
 	  "Texto": "Pulsa el botón frenéticamente para lebantarte.",
 	  "Archivo": null,
+	  "Globo": 1,
+	  "Imagen": null,
 	  "Observaciones": "- Si el jugador presiona la pantalla, entonces se escuchará el sonido de esfuerzo para levantarse."
 	},
 	{
+	  "Bloques": null,
 	  "ID": 20,
 	  "Tipo": "SFX",
 	  "Loop": false,
@@ -208,29 +269,38 @@
 	  "Duracion": null,
 	  "Texto": "[FX] Sonido de esfuerzo",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 21,
 	  "Tipo": "NOTA",
 	  "Loop": false,
 	  "Salto": null,
 	  "Duracion": null,
 	  "Texto": "¡¡¡Por favor!!! ¡¡¡Levántate!!! ¡¡¡No quiero abandonarte!!! ¡¡¡Presiona la pantalla rápido para que te pongas de pie!!!",
-	  "Archivo": null,
+	  "Archivo": "Voz Karla-08.wav",
+	  "Globo": 2,
+	  "Imagen": null,
 	  "Observaciones": "[Voz - Actriz 1 - Intención Desesperación] - Si pasan más de 3 segundos y no puede levantarse (12 clicks en 3 segundos) - Reinicia el contador"
 	},
 	{
+	  "Bloques": 3,
 	  "ID": 22,
 	  "Tipo": "SFX",
 	  "Loop": false,
 	  "Salto": null,
 	  "Duracion": 4,
 	  "Texto": "[FX Sonido de la muchedumbre aún más intenso - Volumen 7/10 - Duración 4 segundos]",
-	  "Archivo": null,
+	  "Archivo": "Bloque03-alt.wav",
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 23,
 	  "Tipo": "SFX",
 	  "Loop": false,
@@ -238,9 +308,12 @@
 	  "Duracion": 2,
 	  "Texto": "[FX - Silencio total]",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 24,
 	  "Tipo": "SFX",
 	  "Loop": true,
@@ -248,9 +321,12 @@
 	  "Duracion": null,
 	  "Texto": "[FX - Se escucha un zumbido de baja frecuencia - Volumen 5/10]",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 25,
 	  "Tipo": "SFX",
 	  "Loop": true,
@@ -258,9 +334,12 @@
 	  "Duracion": null,
 	  "Texto": "[FX - Latido de un corazón - Volumen 3/10 - Se mantiene en loop junto con el zumbido]",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 26,
 	  "Tipo": "NARRACION",
 	  "Loop": false,
@@ -268,9 +347,12 @@
 	  "Duracion": null,
 	  "Texto": "Allá, sobre ese edificio ¿Qué es eso? ¡¡¡Está flotando!!! ¡¡¡Ya!!! ¡¡¡Presiona la pantalla para que te puedas levantaaaaaaar!!!",
 	  "Archivo": null,
+	  "Globo": 2,
+	  "Imagen": null,
 	  "Observaciones": "[Voz - Actriz 1 - Intención Curiosidad/Miedo - Voz amortiguada como si estuviera hablando a través de una pared] Tartamudeo"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 27,
 	  "Tipo": "SFX",
 	  "Loop": false,
@@ -278,9 +360,12 @@
 	  "Duracion": null,
 	  "Texto": "[FX - Se mantienen todos los efectos anteriores]",
 	  "Archivo": null,
+	  "Globo": 0,
+	  "Imagen": null,
 	  "Observaciones": "Si el usuario no presiona la pantalla"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 28,
 	  "Tipo": "NOTA",
 	  "Loop": false,
@@ -288,9 +373,12 @@
 	  "Duracion": null,
 	  "Texto": "¡¡¡Por favor levántate!!! ¡¡¡Esa cosa está empezando a brillar!!! ¡¡¡Va a hacer algo!!!",
 	  "Archivo": null,
+	  "Globo": 2,
+	  "Imagen": null,
 	  "Observaciones": "[Voz - Actriz 1 - Intención Miedo/Desesperación] [Repetir cada 4 segundos hasta que el usuario presione la pantalla]"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 29,
 	  "Tipo": "NARRACION",
 	  "Loop": false,
@@ -298,9 +386,12 @@
 	  "Duracion": null,
 	  "Texto": "¡¡¡¿¿¿QUÉ ES ESO???!!! ¡¡¡ESE DESTELLO!!! ¡¡¡NO PUEDO VEEEEEER!!!",
 	  "Archivo": null,
+	  "Globo": 2,
+	  "Imagen": null,
 	  "Observaciones": "[Voz - Actriz 1 - Intención Pánico] -  Si el usuario presiona la pantalla"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 30,
 	  "Tipo": "SFX",
 	  "Loop": false,
@@ -308,9 +399,12 @@
 	  "Duracion": null,
 	  "Texto": "[FX - Sonido de succión]",
 	  "Archivo": null,
+	  "Globo": null,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 31,
 	  "Tipo": "SFX",
 	  "Loop": false,
@@ -318,9 +412,12 @@
 	  "Duracion": 3,
 	  "Texto": "Silencio",
 	  "Archivo": null,
+	  "Globo": null,
+	  "Imagen": null,
 	  "Observaciones": null
 	},
 	{
+	  "Bloques": null,
 	  "ID": 32,
 	  "Tipo": "SFX",
 	  "Loop": false,
@@ -328,9 +425,12 @@
 	  "Duracion": null,
 	  "Texto": "[FX] Estallido",
 	  "Archivo": null,
+	  "Globo": null,
+	  "Imagen": null,
 	  "Observaciones": "al menos 5 segundos"
 	},
 	{
+	  "Bloques": null,
 	  "ID": 33,
 	  "Tipo": "OTRO",
 	  "Loop": false,
@@ -338,6 +438,8 @@
 	  "Duracion": null,
 	  "Texto": "FIN",
 	  "Archivo": null,
+	  "Globo": null,
+	  "Imagen": null,
 	  "Observaciones": null
 	}
   ]

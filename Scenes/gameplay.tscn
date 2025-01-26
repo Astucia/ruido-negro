@@ -1,26 +1,21 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7aa8jrfq2hel"]
+[gd_scene load_steps=13 format=3 uid="uid://b7aa8jrfq2hel"]
 
 [ext_resource type="Script" path="res://Scripts/gameplay.gd" id="1_ycujr"]
 [ext_resource type="Texture2D" uid="uid://b6oa4s8fic3ej" path="res://Images/Mockup.png" id="2_2ee8o"]
-[ext_resource type="AudioStream" uid="uid://3rfqlu12gm1l" path="res://SFX/DarkDrone01.mp3" id="2_gowo8"]
-[ext_resource type="AudioStream" uid="uid://dtd85bilwxss4" path="res://SFX/DarkDrone02.mp3" id="3_eft2g"]
+[ext_resource type="AudioStream" uid="uid://bplt26kkwhs2b" path="res://SFX/Bloque01.wav" id="2_xlgbr"]
 [ext_resource type="Texture2D" uid="uid://c6q3qj0fqf1cy" path="res://Images/GloboNeutro.png" id="3_nnvnm"]
+[ext_resource type="AudioStream" uid="uid://cgw31ly8t4s1g" path="res://SFX/Bloque02.wav" id="3_pj0bd"]
 [ext_resource type="Script" path="res://Scripts/JSON_Manager.gd" id="4_k25dc"]
-[ext_resource type="AudioStream" uid="uid://se8vlky7dn61" path="res://SFX/Esfuerzo.mp3" id="4_kjrb5"]
-[ext_resource type="AudioStream" uid="uid://er4ew4ji7scr" path="res://SFX/Explosion.mp3" id="5_1mfuh"]
-[ext_resource type="AudioStream" uid="uid://pevqs5kcbq8o" path="res://SFX/FinalDamage01.mp3" id="6_svv50"]
-[ext_resource type="AudioStream" uid="uid://c3x21m32x12qr" path="res://SFX/Heartbeat-Loop.mp3" id="7_ap2lh"]
-[ext_resource type="AudioStream" uid="uid://cipkkfnexhosx" path="res://SFX/Pasos5secs.wav" id="8_qq4nq"]
-[ext_resource type="AudioStream" uid="uid://b1jcco0n6bfvh" path="res://SFX/RadioactAlarm01.mp3" id="9_8t4wj"]
-[ext_resource type="AudioStream" uid="uid://coiba7o63oy0x" path="res://SFX/RadioactAlarm02.mp3" id="10_wj1qs"]
-[ext_resource type="AudioStream" uid="uid://qbobpdsbjfx5" path="res://SFX/RunningCrowd01.mp3" id="11_r6xa6"]
-[ext_resource type="AudioStream" uid="uid://c7xiya2mvv0n7" path="res://SFX/RunningCrowd-4Secs.mp3" id="12_pxtb1"]
-[ext_resource type="AudioStream" uid="uid://dobmpcvbt3fhx" path="res://SFX/Tropiezo01.mp3" id="13_nocim"]
-[ext_resource type="AudioStream" uid="uid://dtngdt5b4q05e" path="res://SFX/Tropiezo02.mp3" id="14_dffit"]
+[ext_resource type="AudioStream" uid="uid://b1bd3jtl2k4j1" path="res://SFX/Bloque03-alt.wav" id="4_re3ng"]
+[ext_resource type="AudioStream" uid="uid://bq5cshirgh7i8" path="res://SFX/Bloque03.wav" id="5_tld47"]
+[ext_resource type="AudioStream" uid="uid://cntb62nwul8du" path="res://SFX/Voz Karla-04.wav" id="6_gd0kv"]
+[ext_resource type="AudioStream" uid="uid://cpnn5qcu7jjqb" path="res://SFX/Voz Karla-08.wav" id="7_gxi2f"]
+[ext_resource type="AudioStream" uid="uid://b30cka3bkqndo" path="res://SFX/Voz Karla-HeavyBreathing.wav" id="8_0o6j3"]
+[ext_resource type="AudioStream" uid="uid://duhk3dbnpmel" path="res://SFX/Voz Karla-Jadeo.wav" id="9_nutgb"]
 
 [node name="GameplayRuidoNegro" type="Node2D"]
 script = ExtResource("1_ycujr")
-AudioTracks = Array[AudioStream]([ExtResource("2_gowo8"), ExtResource("3_eft2g"), ExtResource("4_kjrb5"), ExtResource("5_1mfuh"), ExtResource("6_svv50"), ExtResource("7_ap2lh"), ExtResource("8_qq4nq"), ExtResource("9_8t4wj"), ExtResource("10_wj1qs"), ExtResource("11_r6xa6"), ExtResource("12_pxtb1"), ExtResource("13_nocim"), ExtResource("14_dffit")])
+AudioTracks = Array[AudioStream]([ExtResource("2_xlgbr"), ExtResource("3_pj0bd"), ExtResource("4_re3ng"), ExtResource("5_tld47"), ExtResource("6_gd0kv"), ExtResource("7_gxi2f"), ExtResource("8_0o6j3"), ExtResource("9_nutgb")])
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 648.0
@@ -110,7 +105,7 @@ text = "Debug
 "
 
 [node name="TextTimer" type="Timer" parent="."]
-wait_time = 2.0
+one_shot = true
 autostart = true
 
 [node name="obj_JSON_Manager" type="Node" parent="."]
